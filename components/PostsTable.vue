@@ -29,18 +29,18 @@ const handleDeletePost = (id: number) => {
     <table class="min-w-full text-white">
       <thead class="bg-gray-800">
       <tr>
-        <th class="w-1/6 py-3 px-4 uppercase font-semibold text-sm">ID</th>
-        <th class="w-1/3 py-3 px-4 uppercase font-semibold text-sm">Title</th>
-        <th class="py-3 px-4 uppercase font-semibold text-sm">Body</th>
-        <th class="py-3 px-4 uppercase font-semibold text-sm">Actions</th>
+        <th class="w-1/6 py-3 px-4 uppercase font-semibold text-sm max-sm:py-0 max-sm:px-0">ID</th>
+        <th class="w-1/3 py-3 px-4 uppercase font-semibold text-sm max-sm:py-0 max-sm:px-0">Title</th>
+        <th class="py-3 px-4 uppercase font-semibold text-sm max-sm:py-0 max-sm:px-0">Body</th>
+        <th class="py-3 px-4 uppercase font-semibold text-sm max-sm:py-0 max-sm:px-0">Actions</th>
       </tr>
       </thead>
       <tbody class="text-white">
       <tr v-for="post in sortedPosts" :key="post.id" class="hover:bg-gray-600 border-b cursor-pointer" @click="handleEditPost(post)">
-        <td class="py-3 px-4">{{ post.id }}</td>
-        <td class="py-3 px-4">{{ post.title }}</td>
-        <td class="py-3 px-4">{{ post.body }}</td>
-        <td class="py-3 px-4 flex gap-2">
+        <td class="py-3 px-4 border-r  max-sm:px-0">{{ post.id }}</td>
+        <td class="py-3 px-4 border-r  max-sm:px-0">{{ post.title }}</td>
+        <td class="py-3 px-4 border-r  max-sm:px-0">{{ post.body }}</td>
+        <td class=" py-3 px-4 h-full max-sm:px-0">
           <AppButton @click.stop @click="handleDeletePost(post.id)" class="bg-red-500 hover:bg-red-600">Delete</AppButton>
         </td>
       </tr>
